@@ -1,3 +1,4 @@
+using SVS.ChessMaze;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -26,15 +27,13 @@ public class ExcavatorController : MonoBehaviour
     [SerializeField] private RaycastHit2D hit;
     [SerializeField] private float score;
 
-    private float highScore;
-
     private Rigidbody rig;
-    private BoxCollider boxCollider;
     private bool isMoving = false;
+    private float reduceCenterMassY = -1;
     private float scoreReduceAmount = 10f;
 
+    public float distToGround = 0.3f;
     public event EventHandler onScoreChanged;
-
     private void Awake()
     {
         Instance = this;
@@ -43,12 +42,9 @@ public class ExcavatorController : MonoBehaviour
 
     private void Start()
     {
-        boxCollider = GetComponent<BoxCollider>();
         rig = GetComponent<Rigidbody>();
-        rig.centerOfMass = centerOfMass.transform.localPosition;
+        rig.centerOfMass = new Vector3(rig.centerOfMass.x, reduceCenterMassY, rig.centerOfMass.z);
     }
-
-
     private void Update()
     {
         updateMotor();
@@ -57,19 +53,6 @@ public class ExcavatorController : MonoBehaviour
         updateRotateBoom();
         updateRotateArm();
         updateRotateBucket();
-    }
-
-    private void FixedUpdate()
-    {
-        //movementWheel();
-    }
-
-    private void movementWheel()
-    {
-        foreach (var wheel in wheels)
-        {
-            wheel.motorTorque = UnityEngine.Input.GetAxis("Vertical") * ((moveSpeed * 5) / 4);
-        }
     }
 
     // movement
@@ -95,11 +78,11 @@ public class ExcavatorController : MonoBehaviour
     {
         if (UnityEngine.Input.GetKey(KeyCode.A))
         {   // rotate y axis
-            transform.Rotate(Vector3.down * rotateTrackSpeed * Time.deltaTime);          
+            transform.Rotate(rotateTrackSpeed * Time.deltaTime * Vector3.down);          
         }
         if (UnityEngine.Input.GetKey(KeyCode.D))
         {
-            transform.Rotate(-Vector3.down * rotateTrackSpeed * Time.deltaTime);
+            transform.Rotate(rotateTrackSpeed * Time.deltaTime * -Vector3.down);
         }
     }
 
@@ -107,11 +90,11 @@ public class ExcavatorController : MonoBehaviour
     {
         if (UnityEngine.Input.GetKey(KeyCode.Q))
         { // rotate z axis
-            body.transform.Rotate(Vector3.back * rotateBodySpeed * Time.deltaTime);
+            body.transform.Rotate(rotateBodySpeed * Time.deltaTime * Vector3.back);
         }
         if (UnityEngine.Input.GetKey(KeyCode.E))
         {
-            body.transform.Rotate(-Vector3.back * rotateBodySpeed * Time.deltaTime);
+            body.transform.Rotate(rotateBodySpeed * Time.deltaTime * -Vector3.back);
         }
     }
 

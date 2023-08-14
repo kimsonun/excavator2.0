@@ -4506,37 +4506,6 @@ Transform:
   m_Father: {fileID: 1373110172}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &612244804
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 612244805}
-  m_Layer: 0
-  m_Name: CenterOfMass
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &612244805
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 612244804}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.47, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2017970596}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &624809589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10992,20 +10961,10 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8067754499128920526, guid: c59795ffc45c2334597fd1b96f430abd, type: 3}
   m_PrefabInstance: {fileID: 1335393857}
   m_PrefabAsset: {fileID: 0}
---- !u!146 &1339768630 stripped
-WheelCollider:
-  m_CorrespondingSourceObject: {fileID: 6689868345191552195, guid: de6cef2598002bc408a0c2fe082d0db7, type: 3}
-  m_PrefabInstance: {fileID: 6039371094632384595}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1344247558 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2458582979053280810, guid: dce48e42e11eb124495c0cf7594ca232, type: 3}
   m_PrefabInstance: {fileID: 6603853901020395692}
-  m_PrefabAsset: {fileID: 0}
---- !u!146 &1349361190 stripped
-WheelCollider:
-  m_CorrespondingSourceObject: {fileID: 671553944307739488, guid: de6cef2598002bc408a0c2fe082d0db7, type: 3}
-  m_PrefabInstance: {fileID: 6039371094632384595}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1362498417
 GameObject:
@@ -12011,11 +11970,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3581124517395901098, guid: f6a446d3470417844bebb7e0a0fe5091, type: 3}
   m_PrefabInstance: {fileID: 1506192059}
-  m_PrefabAsset: {fileID: 0}
---- !u!146 &1514608546 stripped
-WheelCollider:
-  m_CorrespondingSourceObject: {fileID: 2691421152179563534, guid: de6cef2598002bc408a0c2fe082d0db7, type: 3}
-  m_PrefabInstance: {fileID: 6039371094632384595}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1529007725
 PrefabInstance:
@@ -14952,11 +14906,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868216518}
   m_CullTransparentMesh: 1
---- !u!146 &1879351183 stripped
-WheelCollider:
-  m_CorrespondingSourceObject: {fileID: 8854992059135735859, guid: de6cef2598002bc408a0c2fe082d0db7, type: 3}
-  m_PrefabInstance: {fileID: 6039371094632384595}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1879939271
 GameObject:
   m_ObjectHideFlags: 0
@@ -16400,11 +16349,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dce48e42e11eb124495c0cf7594ca232, type: 3}
---- !u!4 &2017970596 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4617125286643106607, guid: de6cef2598002bc408a0c2fe082d0db7, type: 3}
-  m_PrefabInstance: {fileID: 6039371094632384595}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2021452983
 GameObject:
   m_ObjectHideFlags: 0
@@ -18093,34 +18037,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 346692478335816030, guid: de6cef2598002bc408a0c2fe082d0db7, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 382960574705724274, guid: de6cef2598002bc408a0c2fe082d0db7, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 671553944307739488, guid: de6cef2598002bc408a0c2fe082d0db7, type: 3}
-      propertyPath: m_SuspensionSpring.damper
-      value: 9000
-      objectReference: {fileID: 0}
-    - target: {fileID: 671553944307739488, guid: de6cef2598002bc408a0c2fe082d0db7, type: 3}
-      propertyPath: m_SuspensionSpring.spring
-      value: 90000
-      objectReference: {fileID: 0}
-    - target: {fileID: 1144173716357879081, guid: de6cef2598002bc408a0c2fe082d0db7, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2691421152179563534, guid: de6cef2598002bc408a0c2fe082d0db7, type: 3}
-      propertyPath: m_SuspensionSpring.damper
-      value: 9000
-      objectReference: {fileID: 0}
-    - target: {fileID: 2691421152179563534, guid: de6cef2598002bc408a0c2fe082d0db7, type: 3}
-      propertyPath: m_SuspensionSpring.spring
-      value: 90000
-      objectReference: {fileID: 0}
     - target: {fileID: 4617125286643106607, guid: de6cef2598002bc408a0c2fe082d0db7, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -18169,64 +18085,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5706956870286391866, guid: de6cef2598002bc408a0c2fe082d0db7, type: 3}
-      propertyPath: centerOfMass
-      value: 
-      objectReference: {fileID: 612244804}
-    - target: {fileID: 5706956870286391866, guid: de6cef2598002bc408a0c2fe082d0db7, type: 3}
-      propertyPath: wheels.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5706956870286391866, guid: de6cef2598002bc408a0c2fe082d0db7, type: 3}
-      propertyPath: wheels.Array.data[0]
-      value: 
-      objectReference: {fileID: 1339768630}
-    - target: {fileID: 5706956870286391866, guid: de6cef2598002bc408a0c2fe082d0db7, type: 3}
-      propertyPath: wheels.Array.data[1]
-      value: 
-      objectReference: {fileID: 1514608546}
-    - target: {fileID: 5706956870286391866, guid: de6cef2598002bc408a0c2fe082d0db7, type: 3}
-      propertyPath: wheels.Array.data[2]
-      value: 
-      objectReference: {fileID: 1349361190}
-    - target: {fileID: 5706956870286391866, guid: de6cef2598002bc408a0c2fe082d0db7, type: 3}
-      propertyPath: wheels.Array.data[3]
-      value: 
-      objectReference: {fileID: 1879351183}
-    - target: {fileID: 5820593905633365202, guid: de6cef2598002bc408a0c2fe082d0db7, type: 3}
-      propertyPath: m_Mass
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 5820593905633365202, guid: de6cef2598002bc408a0c2fe082d0db7, type: 3}
-      propertyPath: m_Constraints
-      value: 96
-      objectReference: {fileID: 0}
-    - target: {fileID: 6689868345191552195, guid: de6cef2598002bc408a0c2fe082d0db7, type: 3}
-      propertyPath: m_SuspensionSpring.damper
-      value: 9000
-      objectReference: {fileID: 0}
-    - target: {fileID: 6689868345191552195, guid: de6cef2598002bc408a0c2fe082d0db7, type: 3}
-      propertyPath: m_SuspensionSpring.spring
-      value: 90000
-      objectReference: {fileID: 0}
-    - target: {fileID: 8539749983321992842, guid: de6cef2598002bc408a0c2fe082d0db7, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8854992059135735859, guid: de6cef2598002bc408a0c2fe082d0db7, type: 3}
-      propertyPath: m_SuspensionSpring.damper
-      value: 9000
-      objectReference: {fileID: 0}
-    - target: {fileID: 8854992059135735859, guid: de6cef2598002bc408a0c2fe082d0db7, type: 3}
-      propertyPath: m_SuspensionSpring.spring
-      value: 90000
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 4617125286643106607, guid: de6cef2598002bc408a0c2fe082d0db7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 612244805}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de6cef2598002bc408a0c2fe082d0db7, type: 3}
 --- !u!1001 &6603853901020395692

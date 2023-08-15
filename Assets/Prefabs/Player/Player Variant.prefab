@@ -1234,7 +1234,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: cb4b99ea3b84e964588d29e23798cf31, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cb4b99ea3b84e964588d29e23798cf31, type: 3}
       propertyPath: m_LocalScale.x
@@ -1351,16 +1351,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cb4b99ea3b84e964588d29e23798cf31, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5706956870286391866}
+      addedObject: {fileID: 3119998300484917832}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cb4b99ea3b84e964588d29e23798cf31, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3119998300484917832}
+      addedObject: {fileID: 5820593905633365202}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cb4b99ea3b84e964588d29e23798cf31, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4534049813181174674}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cb4b99ea3b84e964588d29e23798cf31, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5820593905633365202}
+      addedObject: {fileID: 5706956870286391866}
   m_SourcePrefab: {fileID: 100100000, guid: cb4b99ea3b84e964588d29e23798cf31, type: 3}
 --- !u!4 &183559107690831908 stripped
 Transform:
@@ -1417,41 +1417,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cb4b99ea3b84e964588d29e23798cf31, type: 3}
   m_PrefabInstance: {fileID: 5159413788208489668}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5706956870286391866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5429232634316609941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b381e68deb7e7bc4686f1f77de65914c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wheels:
-  - {fileID: 6689868345191552195}
-  - {fileID: 2691421152179563534}
-  - {fileID: 671553944307739488}
-  - {fileID: 8854992059135735859}
-  - {fileID: 1225621837369974431}
-  - {fileID: 7141422760656130346}
-  moveSpeed: 10
-  centerOfMass: {fileID: 8636905876577838856}
-  tracks:
-  - {fileID: 6578526658318485685}
-  - {fileID: 3230504059431691719}
-  body: {fileID: 586731959869000101}
-  boom: {fileID: 796408632884637946}
-  arm: {fileID: 2618716391315082062}
-  bucket: {fileID: 361326198094275352}
-  rotateTrackSpeed: 50
-  rotateBodySpeed: 50
-  rotateBoomSpeed: 50
-  rotateArmSpeed: 50
-  rotateBucketSpeed: 50
-  score: 0
-  distToGround: 0.3
 --- !u!82 &3119998300484917832
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1548,19 +1513,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4534049813181174674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5429232634316609941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33818de389cbd774caf0b174fbf5583b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  orbsCount: 0
 --- !u!54 &5820593905633365202
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1588,6 +1540,53 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 64
   m_CollisionDetection: 1
+--- !u!114 &4534049813181174674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5429232634316609941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33818de389cbd774caf0b174fbf5583b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orbsCount: 0
+--- !u!114 &5706956870286391866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5429232634316609941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b381e68deb7e7bc4686f1f77de65914c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheels:
+  - {fileID: 6689868345191552195}
+  - {fileID: 2691421152179563534}
+  - {fileID: 671553944307739488}
+  - {fileID: 8854992059135735859}
+  - {fileID: 1225621837369974431}
+  - {fileID: 7141422760656130346}
+  moveSpeed: 10
+  centerOfMass: {fileID: 8636905876577838856}
+  tracks:
+  - {fileID: 6578526658318485685}
+  - {fileID: 3230504059431691719}
+  body: {fileID: 586731959869000101}
+  boom: {fileID: 796408632884637946}
+  arm: {fileID: 2618716391315082062}
+  bucket: {fileID: 361326198094275352}
+  rotateTrackSpeed: 50
+  rotateBodySpeed: 50
+  rotateBoomSpeed: 50
+  rotateArmSpeed: 50
+  rotateBucketSpeed: 50
+  score: 0
 --- !u!4 &6056927436822850485 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7811655282793132175, guid: cb4b99ea3b84e964588d29e23798cf31, type: 3}

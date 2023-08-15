@@ -32,7 +32,6 @@ public class ExcavatorController : MonoBehaviour
     private float reduceCenterMassY = -1;
     private float scoreReduceAmount = 10f;
 
-    public float distToGround = 0.3f;
     public event EventHandler onScoreChanged;
     private void Awake()
     {

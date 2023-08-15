@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
 
     private bool _isGamePaused = false;
 
-    [SerializeField] private ExcavatorController _excavatorController;
     [SerializeField] private Material[] skybox;
     private int skyboxIndex = 0;
 
@@ -28,7 +27,6 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        _excavatorController = GameObject.Find("Player").GetComponent<ExcavatorController>();
 
     }
     private void Start()
@@ -52,13 +50,15 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 0f;
             OnGamePaused?.Invoke(this, EventArgs.Empty);
-            _excavatorController.enabled = false;
+            ExcavatorController.Instance.enabled = false;
+            MouseLooking.instance.enabled = false;
             Cursor.lockState = CursorLockMode.None;
         } else
         {
             Time.timeScale = 1f;
             OnGameUnpaused?.Invoke(this, EventArgs.Empty);
-            _excavatorController.enabled = true;
+            ExcavatorController.Instance.enabled = true;
+            MouseLooking.instance.enabled = true;
             Cursor.lockState = CursorLockMode.Locked;
         }
     }

@@ -6543,7 +6543,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc8b6b8799320443a97e6fe44d7439b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _excavatorController: {fileID: 0}
   skybox:
   - {fileID: 2100000, guid: b160f5775ac9e874c9651b7a8c3c2e3b, type: 2}
   - {fileID: 2100000, guid: 982805a4762c87b428f6ad1b544fb1c6, type: 2}

@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Windows;
 
@@ -10,7 +11,6 @@ public class ExcavatorController : MonoBehaviour
 {
     public static ExcavatorController Instance { get; private set; }
 
-    [SerializeField] WheelCollider[] wheels;
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private GameObject centerOfMass;
 
@@ -26,6 +26,9 @@ public class ExcavatorController : MonoBehaviour
     [SerializeField] private float rotateBucketSpeed = 50f;
     [SerializeField] private RaycastHit2D hit;
     [SerializeField] private float score;
+    [SerializeField] private List<AxilInfo> axilInfos;
+    [SerializeField] private float maxMotorTorque;
+    private float motor;
 
     private Rigidbody rig;
     private bool isMoving = false;
@@ -46,12 +49,34 @@ public class ExcavatorController : MonoBehaviour
     }
     private void Update()
     {
-        updateMotor();
+        //updateMotor();
         updateRotateAll();
         updateRotateBody();
         updateRotateBoom();
         updateRotateArm();
         updateRotateBucket();
+    }
+
+    private void FixedUpdate()
+    {
+        updateWheelMotor();
+    }
+
+    private void updateWheelMotor()
+    {
+        motor = maxMotorTorque * UnityEngine.Input.GetAxis("Vertical");
+        foreach (AxilInfo axilinfo in axilInfos)
+        {
+            if (axilinfo.motor == true)
+            {
+                axilinfo.leftWheel.motorTorque = motor;
+                axilinfo.rightWheel.motorTorque = motor;
+            } 
+        }
+        if (rig.velocity != null && motor == 0)
+        {
+            rig.velocity = 0.99f * Time.deltaTime * rig.velocity;
+        }
     }
 
     // movement
@@ -137,7 +162,7 @@ public class ExcavatorController : MonoBehaviour
         {
             rotateBucketAmount.x += rotateBucketSpeed * Time.deltaTime;
         }
-        bucket.transform.localEulerAngles = clampRotationWithMinMax(rotateBucketAmount, -50, 10);
+        bucket.transform.localEulerAngles = clampRotationWithMinMax(rotateBucketAmount, -80, 10);
     }
 
     private Vector3 clampRotationWithMinMax(Vector3 rotateAmount, float minRotation, float maxRotation)
@@ -154,7 +179,6 @@ public class ExcavatorController : MonoBehaviour
             reduceScore();
         }
     }
-
     private void reduceScore()
     {
         score -= scoreReduceAmount;
@@ -206,5 +230,15 @@ public class ExcavatorController : MonoBehaviour
     public void setBucketRotateSpeed(float s)
     {
         rotateBucketSpeed = s;
+    }
+
+    [System.Serializable]
+    public class AxilInfo
+    {
+        public WheelCollider leftWheel;
+        public WheelCollider rightWheel;
+
+        public bool motor;
+        public bool steering;
     }
 }

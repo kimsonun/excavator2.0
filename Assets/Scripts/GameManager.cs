@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -31,6 +32,8 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        _isGamePaused = true;
+        TogglePauseGame();
         themeMusic = GameObject.Find("Music").GetComponent<AudioSource>();
         themeMusic.Play();
     }
@@ -43,6 +46,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
     public void TogglePauseGame()
     {
         _isGamePaused = !_isGamePaused;
@@ -50,16 +54,12 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 0f;
             OnGamePaused?.Invoke(this, EventArgs.Empty);
-            ExcavatorController.Instance.enabled = false;
             MouseLooking.instance.enabled = false;
-            Cursor.lockState = CursorLockMode.None;
         } else
         {
             Time.timeScale = 1f;
             OnGameUnpaused?.Invoke(this, EventArgs.Empty);
-            ExcavatorController.Instance.enabled = true;
             MouseLooking.instance.enabled = true;
-            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 

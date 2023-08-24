@@ -34,7 +34,7 @@ public class MouseLooking : MonoBehaviour
     }
 
     private void GameManager_OnGameUnpaused(object sender, EventArgs e)
-    {
+    { 
         Cursor.lockState = CursorLockMode.Locked;
     }
 

@@ -6,10 +6,12 @@ public class Rune : MonoBehaviour
 {
     public Player player;
     [SerializeField] private int requireOrbToWin = 0;
+    private int count = 0;
 
     private void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
+        count = 0;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -18,7 +20,11 @@ public class Rune : MonoBehaviour
         {
             if (player.getOrb() >= requireOrbToWin)
             {
-                GameManager.Instance.LevelComplete();
+                if (count == 0)
+                {
+                    GameManager.Instance.LevelComplete();
+                    count++;
+                }
             }
         }
     }
